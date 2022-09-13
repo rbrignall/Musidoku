@@ -30,9 +30,8 @@ module.exports = {
     },
   },
   variants: {},
-  purge:    {
-    content: ['./src/**/*.svelte', './src/**/*.html'],
-    options: {
+  content: ['./src/**/*.svelte', './src/**/*.html'],
+  options: {
       whitelistPatterns: [/^(row|col)-start-/, /svelte-/],
 
       defaultExtractor: (content) => {
@@ -49,7 +48,6 @@ module.exports = {
         }
         return matchedTokens;
       },
-    },
   },
   future:   {
     removeDeprecatedGapUtilities: true,

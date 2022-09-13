@@ -44,8 +44,8 @@
 		@apply bg-gray-100 border-gray-500;
 	}
 
-	input[type='checkbox']:focus + .track,
+    input[type='checkbox']:focus + .track,
 	input[type='checkbox']:active + .track {
-		@apply outline-none shadow-outline;
+		@apply outline-none; /* shadow-outline;*/
 	}
 </style>
