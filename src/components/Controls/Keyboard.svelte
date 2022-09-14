@@ -25,6 +25,7 @@
 			}
 		}
 	}
+    const musicsymbol = ["","𝄞","𝄢","𝅗𝅥","𝅘𝅥","𝅘𝅥𝅮","𝅘𝅥𝅯","♯","♭","𝄐"];
 
 	function handleKey(e) {
 		switch (e.key || e.keyCode) {
@@ -87,7 +88,7 @@
 			</button>
 		{:else}
 			<button class="btn btn-key" disabled={$keyboardDisabled} title="Insert {keyNum + 1}" on:click={() => handleKeyButton(keyNum + 1)}>
-				{keyNum + 1}
+				{musicsymbol[keyNum + 1]}
 			</button>
 		{/if}
 	{/each}
@@ -102,5 +103,6 @@
 
 	.btn-key {
 		@apply py-4 px-0;
+        font-family: 'Noto Music';
 	}
 </style>

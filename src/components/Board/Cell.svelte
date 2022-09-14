@@ -16,6 +16,7 @@
 	export let sameArea;
 	export let sameNumber;
 
+    const musicsymbol = ["","𝄞","𝄢","𝅗𝅥","𝅘𝅥","𝅘𝅥𝅮","𝅘𝅥𝅯","♯","♭","𝄐"];
 	const borderRight = (cellX !== SUDOKU_SIZE && cellX % 3 !== 0);
 	const borderRightBold = (cellX !== SUDOKU_SIZE && cellX % 3 === 0);
 	const borderBottom = (cellY !== SUDOKU_SIZE && cellY % 3 !== 0);
@@ -40,7 +41,7 @@
 				{#if candidates}
 					<Candidates {candidates} />
 				{:else}
-					<span class="cell-text">{value || ''}</span>
+					<span class="cell-text">{musicsymbol[value] || ''}</span>
 				{/if}
 			</button>
 
@@ -68,6 +69,7 @@
 
 	.cell-text {
 		@apply leading-full text-base;
+        font-family: 'Noto Music';
 	}
 
 	@media (min-width: 300px) {
