@@ -1,7 +1,7 @@
 var ghpages = require('gh-pages');
 
 ghpages.publish(
-    'dist', // path to public directory
+    'docs', // path to public directory
     {
         branch: 'gh-pages',
         repo: 'https://github.com/rbrignall/Musidoku.git', // Update to point to your repository  
