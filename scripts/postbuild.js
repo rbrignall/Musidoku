@@ -21,22 +21,22 @@ function replaceInBuffer(buf, a, b) {
 fs.readFile('./src/template.html', (err, templateHtml) => {
 	throwIfError(err);
 
-	fs.readFile('./dist/critical.css', (err, criticalCss) => {
+	fs.readFile('./docs/critical.css', (err, criticalCss) => {
 		throwIfError(err);
 
 		// Inline the CSS into the template HTML and return resulting HTML (does some file system operations)
 		const inlinedHtml = inlineCriticalCss(templateHtml, criticalCss, {
-			basePath: 'dist',
+			basePath: 'docs',
 			extract:  true,
 			noscript: 'head',
 		});
 
 		// Remove redundant css
-		fs.unlink('./dist/critical.css', throwIfError);
-		fs.unlink('./dist/bundle.css', throwIfError);
+		fs.unlink('./docs/critical.css', throwIfError);
+		fs.unlink('./docs/bundle.css', throwIfError);
 
 		// Read bundle.js
-		fs.readFile('./dist/bundle.js', (err, bundleJs) => {
+		fs.readFile('./docs/bundle.js', (err, bundleJs) => {
 			throwIfError(err);
 
 			// Calculate file hash and get filename using the hash
@@ -46,10 +46,10 @@ fs.readFile('./src/template.html', (err, templateHtml) => {
 			const outputHtml = replaceInBuffer(inlinedHtml, 'bundle.js', hashedBundleName);
 
 			// Write final HTML into index.html
-			fs.writeFile('./dist/index.html', outputHtml, throwIfError);
+			fs.writeFile('./docs/index.html', outputHtml, throwIfError);
 
 			// Rename bundle.js
-			fs.rename('./dist/bundle.js', './dist/' + hashedBundleName, throwIfError);
+			fs.rename('./docs/bundle.js', './docs/' + hashedBundleName, throwIfError);
 		});
 	});
 });

@@ -28,7 +28,7 @@ const preprocess = sveltePreprocess({
 export default {
 	input:   'src/main.js',
 	output:  {
-		file:      'dist/bundle.js',
+		file:      'docs/bundle.js',
 		sourcemap: !production,
 		name:      'app',
 		format:    'iife',
@@ -36,8 +36,8 @@ export default {
 	plugins: [
 		copy({
 			targets: [
-				{ src: 'src/template.html', dest: 'dist', rename: 'index.html' },
-				{ src: 'static/**/*', dest: 'dist' },
+				{ src: 'src/template.html', dest: 'docs', rename: 'index.html' },
+				{ src: 'static/**/*', dest: 'docs' },
 			],
 		}),
 
@@ -55,11 +55,11 @@ export default {
 			output: !production ? 'bundle.css' : (styles, styleNodes) => {
 				for (let filename of Object.keys(styleNodes)) {
 					if (filename.endsWith('App.css')) {
-						writeFileSync('./dist/critical.css', styleNodes[filename]);
+						writeFileSync('./docs/critical.css', styleNodes[filename]);
 					}
 				}
 
-				writeFileSync('./dist/bundle.css', styles);
+				writeFileSync('./docs/bundle.css', styles);
 			},
 		}),
 
@@ -81,7 +81,7 @@ export default {
 		// Watch the `dist` directory and refresh the
 		// browser on changes when not in production
 		!production && livereload({
-			watch: ['dist/bundle.js', 'dist/bundle.css'],
+			watch: ['docs/bundle.js', 'docs/bundle.css'],
 		}),
 
 		// If we're building for production (npm run build
