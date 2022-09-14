@@ -6,8 +6,8 @@ ghpages.publish(
         branch: 'gh-pages',
         repo: 'https://github.com/rbrignall/Musidoku.git', // Update to point to your repository  
         user: {
-            name: 'Robert Brignall', // update to use your name
-            email: 'robert@rbrignall.org.uk' // Update to use your email
+            name: 'rbrignall', // update to use your name
+            email: 'rbrignall@gmail.com' // Update to use your email
         }
     },
     () => {
