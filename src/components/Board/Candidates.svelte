@@ -1,8 +1,8 @@
 <script>
+    import Glyph from '../Utils/Glyph.svelte';
 	import { CANDIDATE_COORDS } from '@sudoku/constants';
 
 	export let candidates = [];
-    const musicsymbol = ["","𝄞","𝄢","𝅗𝅥","𝅘𝅥","𝅘𝅥𝅮","𝅘𝅥𝅯","♯","♭","𝄐"];
 
 </script>
 
@@ -11,7 +11,7 @@
 		<div class="candidate row-start-{row} col-start-{col}"
 		     class:invisible={!candidates.includes(index + 1)}
 		     class:visible={candidates.includes(index + 1)}>
-			{musicsymbol[index + 1]}
+				<Glyph value={index + 1} />
 		</div>
 	{/each}
 </div>
@@ -23,6 +23,5 @@
 
 	.candidate {
 		@apply h-full w-full row-end-auto col-end-auto leading-full;
-        font-family: 'Noto Music';
 	}
 </style>

@@ -1,5 +1,6 @@
 <script>
 	import Candidates from './Candidates.svelte';
+    import Glyph from '../Utils/Glyph.svelte';
 	import { fade } from 'svelte/transition';
 	import { SUDOKU_SIZE } from '@sudoku/constants';
 	import { cursor } from '@sudoku/stores/cursor';
@@ -41,7 +42,7 @@
 				{#if candidates}
 					<Candidates {candidates} />
 				{:else}
-					<span class="cell-text">{musicsymbol[value] || ''}</span>
+					<Glyph value={value} />
 				{/if}
 			</button>
 
@@ -66,12 +67,11 @@
 	.cell-btn:focus {
 		@apply outline-none;
 	}
-
+/*
 	.cell-text {
 		@apply leading-full text-base;
-        font-family: 'Noto Music';
 	}
-
+*/
 	@media (min-width: 300px) {
 		.cell-text {
 			@apply text-lg;
