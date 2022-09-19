@@ -9,15 +9,19 @@ body {
 }
 
 #app {
-	@apply flex flex-col h-screen;
+    @apply flex flex-col h-screen mx-auto md:grid md:grid-cols-3 md:max-w-3xl ;
 }
 
 #app > header {
-	@apply flex-grow;
+	@apply max-w-2xl md:col-span-3;
+}
+
+#app > section {
+    @apply md:col-span-2 md:justify-end;
 }
 
 #app > footer {
-	@apply flex flex-grow flex-col justify-end;
+	@apply flex flex-col mx-auto max-w-lg justify-end md:justify-start md:max-w-xs;
 }
 
 

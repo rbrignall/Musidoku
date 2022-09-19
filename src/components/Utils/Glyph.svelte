@@ -17,7 +17,7 @@ const paths = [
 </script>
 
 <svg width="90%" height="90%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <g id="svgGroup" stroke-linecap="round" fill-rule="evenodd" font-size="9pt" stroke="#000" stroke-width="0.25mm" fill="#000" style="stroke:#000;stroke-width:0.25mm;fill:#000">
+    <g id="svgGroup" stroke-linecap="round" fill-rule="evenodd" stroke="#000" stroke-width="0mm" fill="#000" style="stroke:#000;stroke-width:0mm;fill:#000">
         <path d="{paths[value]}" vector-effect="non-scaling-stroke"/>
     </g>
 </svg>

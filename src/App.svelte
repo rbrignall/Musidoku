@@ -5,6 +5,7 @@
 	import { modal } from '@sudoku/stores/modal';
 	import { gameWon } from '@sudoku/stores/game';
 	import Board from './components/Board/index.svelte';
+	import ActionBar from './components/ActionBar/index.svelte';
 	import Controls from './components/Controls/index.svelte';
 	import Header from './components/Header/index.svelte';
 	import Modal from './components/Modal/index.svelte';
@@ -40,6 +41,7 @@
 <!-- Sudoku Field -->
 <section>
 	<Board />
+    <ActionBar />
 </section>
 
 <!-- Keyboard -->
