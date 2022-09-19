@@ -30,12 +30,12 @@
 </script>
 
 <div class="board-padding relative z-10">
-	<div class="max-w-xl relative">
+	<div class="max-w-lg relative">
 		<div class="w-full" style="padding-top: 100%"></div>
 	</div>
 	<div class="board-padding absolute inset-0 flex justify-center">
 
-		<div class="bg-white shadow-2xl rounded-xl overflow-hidden w-full h-full max-w-xl grid grid-cols-9" class:bg-gray-200={$gamePaused}>
+		<div class="bg-white shadow-2xl rounded-md overflow-hidden w-full h-full max-w-lg grid grid-cols-9" class:bg-gray-200={$gamePaused}>
 
 			{#each $userGrid as row, y}
 				{#each row as value, x}

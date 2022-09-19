@@ -97,7 +97,7 @@
 
 <style>
 	.keyboard-grid {
-		@apply grid grid-rows-2 grid-cols-5 gap-3;
+		@apply grid grid-rows-2 grid-cols-5 gap-3 md:grid-rows-4 md:grid-cols-3;
 	}
 
 

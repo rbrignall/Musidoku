@@ -11,7 +11,7 @@
 
 <style>
 	.action-bar {
-		@apply flex flex-col flex-wrap justify-between pb-5;
+		@apply flex flex-col flex-wrap justify-between pb-5 max-w-lg mx-auto;
 	}
 
 	@screen xs {
