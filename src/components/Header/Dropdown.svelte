@@ -50,7 +50,7 @@
 
 		modal.show('prompt', {
 			title: 'Enter Code',
-			text: 'Please enter the code of the Sudoku puzzle you want to play:',
+			text: 'Please enter the code of the Musidoku puzzle you want to play:',
 			fontMono: true,
 			button: 'Start',
 			onHide: game.resume,
@@ -75,10 +75,10 @@
 <div class="dropdown">
 	<button class="dropdown-button" on:click={dropdownVisible ? hideDropdown : showDropdown} title="{dropdownVisible ? 'Close' : 'Open'} Menu">
 		<svg class="icon-outline mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h12" />
+			<path stroke-linecap="butt" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
 		</svg>
 
-		<span class="text-2xl tracking-wider">{$difficulty === DIFFICULTY_CUSTOM ? 'Custom' : MYDIFFICULTIES[$difficulty]}</span>
+		<span class="text-lg tracking-wider">{$difficulty === DIFFICULTY_CUSTOM ? 'Custom' : MYDIFFICULTIES[$difficulty]}</span>
 	</button>
 
 	{#if dropdownVisible}
@@ -96,7 +96,7 @@
 			{/each}
 
 			<hr class="my-1">
-
+<!--
 			<a class="dropdown-item" on:click|preventDefault={handleCreateOwn} href="/create" title="Create your own Sudoku puzzle">
 				<svg class="icon-solid" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
 					<path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
@@ -104,6 +104,7 @@
 
 				<span class="align-middle">Create Own</span>
 			</a>
+-->
 			<a class="dropdown-item" on:click|preventDefault={handleEnterCode} href="/enter-code" title="Enter a Sudoku puzzle code from a friend">
 				<svg class="icon-solid" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
 					<path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
