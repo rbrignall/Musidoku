@@ -17,7 +17,6 @@
 	export let sameArea;
 	export let sameNumber;
 
-    const musicsymbol = ["","𝄞","𝄢","𝅗𝅥","𝅘𝅥","𝅘𝅥𝅮","𝅘𝅥𝅯","♯","♭","𝄐"];
 	const borderRight = (cellX !== SUDOKU_SIZE && cellX % 3 !== 0);
 	const borderRightBold = (cellX !== SUDOKU_SIZE && cellX % 3 === 0);
 	const borderBottom = (cellY !== SUDOKU_SIZE && cellY % 3 !== 0);
