@@ -5,7 +5,8 @@ module.exports = {
     },
     extend: {
       screens: {
-        'xs': '430px'
+        'xs': '430px',
+        'xxs': '280px'
       },
       lineHeight: {
         full: '100%'
