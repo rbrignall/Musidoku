@@ -28,6 +28,7 @@
 		"rollup-plugin-svelte": "^7.0.0",
 		"rollup-plugin-terser": "^7.0.2",
 		"sudoku": "^0.0.3",
+		"sudoku-gen": "^1.0.0",
 		"svelte": "^3.30.0",
 		"svelte-preprocess": "^4.6.1"
 	},

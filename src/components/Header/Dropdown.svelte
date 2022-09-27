@@ -5,12 +5,6 @@
 	import { slide, fade } from 'svelte/transition';
 	import { DIFFICULTIES, DROPDOWN_DURATION, DIFFICULTY_CUSTOM } from '@sudoku/constants';
 	import { difficulty } from '@sudoku/stores/difficulty';
-    const MYDIFFICULTIES = {
-        "veryeasy":"Tuning Up",
-        "easy":"Moderato",
-        "medium":"Rigoroso",
-        "hard":"Virtuoso"
-    };
     
 	let dropdownVisible = false;
 
@@ -20,7 +14,7 @@
 
 		modal.show('confirm', {
 			title: 'New Game',
-			text: 'Start new game with difficulty "' + MYDIFFICULTIES[difficultyValue] + '"?',
+			text: 'Start new game with difficulty "' + DIFFICULTIES[difficultyValue] + '"?',
 			button: 'Continue',
 			onHide: game.resume,
 			callback: () => {
@@ -78,14 +72,14 @@
 			<path stroke-linecap="butt" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
 		</svg>
 
-		<span class="text-lg tracking-wider">{$difficulty === DIFFICULTY_CUSTOM ? 'Custom' : MYDIFFICULTIES[$difficulty]}</span>
+		<span class="text-lg tracking-wider">{$difficulty === DIFFICULTY_CUSTOM ? 'Custom' : DIFFICULTIES[$difficulty]}</span>
 	</button>
 
 	{#if dropdownVisible}
 		<button transition:fade={{duration: DROPDOWN_DURATION}} class="dropdown-overlay" on:click={hideDropdown} tabindex="-1"></button>
 
 		<div transition:slide={{duration: DROPDOWN_DURATION}} class="dropdown-menu">
-			{#each Object.entries(MYDIFFICULTIES) as [difficultyValue, difficultyLabel]}
+			{#each Object.entries(DIFFICULTIES) as [difficultyValue, difficultyLabel]}
 				<a class="dropdown-item" on:click|preventDefault={() => handleDifficulty(difficultyValue)} href="/difficulty-{difficultyValue}" title="Set difficulty to '{difficultyLabel}'">
 					<svg class="icon-solid" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
 						<path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />

@@ -3,12 +3,6 @@
 	import { startNew, startCustom } from '@sudoku/game';
 	import { validateSencode } from '@sudoku/sencode';
 	import { DIFFICULTIES } from '@sudoku/constants';
-    const MYDIFFICULTIES = {
-        "veryeasy":"Tuning Up",
-        "easy":"Moderato",
-        "medium":"Rigoroso",
-        "hard":"Virtuoso"
-    };
 	export let data = {};
 	export let hideModal;
 
@@ -41,7 +35,7 @@
 
 <div class="inline-block relative mb-6">
 	<select id="difficulty" class="btn btn-small w-full appearance-none leading-normal" bind:value={difficulty} disabled={enteredSencode}>
-		{#each Object.entries(MYDIFFICULTIES) as [difficultyValue, difficultyLabel]}
+		{#each Object.entries(DIFFICULTIES) as [difficultyValue, difficultyLabel]}
 			<option value={difficultyValue}>{difficultyLabel}</option>
 		{/each}
 	</select>
