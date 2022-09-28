@@ -16,7 +16,7 @@ body {
 }
 
 #app > header {
-	@apply max-w-2xl md:col-span-3;
+	@apply max-w-2xl md:col-span-2;
 }
 
 #app > section {
@@ -29,7 +29,7 @@ body {
 
 
 .btn {
-	@apply flex justify-center items-center bg-gray-custom px-5 py-3 border-2 rounded-xl transition-colors duration-100 text-2xl tracking-wide leading-none font-semibold;
+	@apply flex justify-center items-center bg-gray-custom px-4 py-3 border-2 rounded-xl transition-colors duration-100 text-xl tracking-wide leading-none font-semibold;
 }
 
 .btn:hover {
@@ -54,7 +54,7 @@ body {
 }
 
 .btn-small {
-	@apply px-5 py-3 text-lg;
+	@apply px-4 py-2 text-lg;
 }
 
 
