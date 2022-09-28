@@ -12,11 +12,11 @@ module.exports = {
         full: '100%'
       },
       colors: {
-        'primary-lighter': '#eff5ff',
-        'primary-light': '#ccdffe',
-        primary: '#2979fa',
-        'primary-dark': '#256de1',
-        'primary-darker': '#2161c8',
+        'primary-lighter': '#e0f2fe',
+        'primary-light': '#7dd3fc',
+        primary: '#0ea5e9',
+        'primary-dark': '#0369a1',
+        'primary-darker': '#0c4a6e',
 
         secondary: '#f2f7ff',
 

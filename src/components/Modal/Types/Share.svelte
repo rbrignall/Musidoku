@@ -46,7 +46,7 @@
 </script>
 
 <div class="flex justify-between items-center mb-6">
-	<h1 class="text-3xl font-semibold leading-none">Share Sudoku</h1>
+	<h1 class="text-2xl font-semibold leading-none">Share this Musidoku®</h1>
 
 	<div class="cursor-pointer" on:click={hideModal}>
 		<svg class="icon-outline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -56,7 +56,7 @@
 </div>
 
 <div class="code-container">
-	<input class="input code-field" type="text" readonly value={sencode} on:click={e => select(e.target)}>
+	<input class="input code-field text-sm" type="text" readonly value={sencode} on:click={e => select(e.target)}>
 
 	<button class="btn btn-copy" on:click={copyText(sencode)}>
 		<svg class="icon-outline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -65,7 +65,7 @@
 	</button>
 </div>
 
-<hr class="my-8" />
+<hr class="my-5" />
 
 <div class="flex flex-col space-y-2">
 

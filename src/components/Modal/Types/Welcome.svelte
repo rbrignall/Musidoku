@@ -27,13 +27,13 @@
 
 {#if data.sencode}
 	<div class="p-3 text-lg rounded bg-primary bg-opacity-25 border-l-8 border-primary border-opacity-75 mb-4">
-		Someone shared a Sudoku puzzle with you!<br>Just click start if you want to play it
+		Someone shared a Musidoku® puzzle with you!<br>Click start to have a go
 	</div>
 {/if}
 
 <label for="difficulty" class="text-lg mb-3">To start a game, choose a difficulty:</label>
 
-<div class="inline-block relative mb-6">
+<div class="inline-block relative mb-4">
 	<select id="difficulty" class="btn btn-small w-full appearance-none leading-normal" bind:value={difficulty} disabled={enteredSencode}>
 		{#each Object.entries(DIFFICULTIES) as [difficultyValue, difficultyLabel]}
 			<option value={difficultyValue}>{difficultyLabel}</option>
@@ -47,9 +47,9 @@
 	</div>
 </div>
 
-<label for="sencode" class="text-lg mb-3">Or, if you have a code for a custom Sudoku puzzle, enter it here:</label>
+<label for="sencode" class="text-lg mb-3">Or enter a code for an existing Musidoku® puzzle:</label>
 
-<input id="sencode" class="input font-mono mb-5" bind:value={sencode} type="text">
+<input id="sencode" class="input font-mono text-sm mb-4" bind:value={sencode} type="text" placeholder="Enter custom code here">
 
 <div class="flex justify-end">
 	<button class="btn btn-small btn-primary" disabled={buttonDisabled} on:click={handleStart}>Start</button>

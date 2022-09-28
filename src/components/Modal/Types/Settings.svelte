@@ -4,7 +4,7 @@
 	import { settings as settingsStore } from '@sudoku/stores/settings';
 	import { MAX_HINTS } from '@sudoku/constants';
 
-	export let data = {};
+	//export let data = {};
 	export let hideModal;
 
 	let settings = { ...$settingsStore };
@@ -36,12 +36,12 @@
 
 <div class="flex flex-col mb-6 space-y-3">
 	<!--<Switch bind:checked={settings.darkTheme} text="Enable dark theme" id="dark-theme" />-->
-	<Switch bind:checked={settings.displayTimer} text="Display timer while playing" id="display-timer" />
+	<Switch bind:checked={settings.displayTimer} text="Display timer" id="display-timer" />
 
-	<Switch bind:checked={hintsLimited} text="Limit the number of hints available" id="hints-limited" />
+	<Switch bind:checked={hintsLimited} text="Limit the number of hints" id="hints-limited" />
 	{#if hintsLimited}
 		<div transition:slide class="inline-flex items-center">
-			<label for="hints" class="flex-grow text-lg">Number of available hints</label>
+			<label for="hints" class="flex-grow text-lg">Number of hints</label>
 
 			<input bind:value={settings.hints} class="number-input" id="hints" name="hints" type="number" min="0" max="81" />
 		</div>
@@ -49,7 +49,7 @@
 
 	<Switch bind:checked={settings.highlightCells} text="Highlight cells in same row/column/box" id="highlight-cells" />
 	<Switch bind:checked={settings.highlightSame} text="Highlight cells with the same number" id="highlight-matching" />
-	<Switch bind:checked={settings.highlightConflicting} text="Highlight conflicting numbers" id="highlight-conflicting" />
+	<Switch bind:checked={settings.highlightConflicting} text="Show conflicts" id="highlight-conflicting" />
 </div>
 
 <div class="flex justify-end">

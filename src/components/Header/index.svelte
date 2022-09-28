@@ -3,13 +3,12 @@
 	import Dropdown from './Dropdown.svelte';
 </script>
 
-<div class="px-4 py-4 flex justify-center text-white">
+<div class="px-2 py-2 flex justify-center text-white">
 	<div class="w-full max-w-xl">
 
 		<nav class="flex flex-wrap items-center justify-between">
-            <h1>Musidoku®</h1>
 			<Dropdown />
-
+            <h1>Musidoku®</h1>
 			<Buttons />
 		</nav>
 
@@ -18,7 +17,7 @@
 
 <style>
     h1 {
-        @apply text-2xl block px-4 py-2 text-white font-bold;
+        @apply text-lg block px-2 py-2 text-white font-bold xs:text-xl sm:text-2xl sm:px-4;
     }
 
 </style>
