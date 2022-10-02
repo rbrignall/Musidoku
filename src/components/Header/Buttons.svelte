@@ -32,7 +32,7 @@
 
 <style>
 	.btn-header {
-		@apply bg-white bg-opacity-0 transition-opacity p-1;
+		@apply bg-white bg-opacity-0 transition-opacity p-1 border-0;
 	}
 
 	.btn-header:hover {

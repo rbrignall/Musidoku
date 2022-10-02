@@ -130,7 +130,7 @@
 
 
 	.dropdown-item {
-		@apply block px-4 py-2 text-gray-800 transition-colors duration-100 text-lg tracking-wide font-semibold;
+		@apply block px-4 py-2 text-gray-800 transition-colors duration-100 text-base tracking-wide;
 	}
 
 	.dropdown-item:hover {

@@ -1,4 +1,6 @@
 <script>
+	import { modal } from '@sudoku/stores/modal';
+	import { pauseGame, resumeGame } from '@sudoku/game';
 	import { candidates } from '@sudoku/stores/candidates';
 	import { userGrid } from '@sudoku/stores/grid';
 	import { cursor } from '@sudoku/stores/cursor';
@@ -15,9 +17,13 @@
 			if ($candidates.hasOwnProperty($cursor.x + ',' + $cursor.y)) {
 				candidates.clear($cursor);
 			}
-
-			userGrid.applyHint($cursor);
-		}
+            try {
+			     userGrid.applyHint($cursor);
+            } catch(err) {
+		        pauseGame();
+		        modal.show('solveerror', { onHide: resumeGame });
+	        }
+        }
 	}
 </script>
 
