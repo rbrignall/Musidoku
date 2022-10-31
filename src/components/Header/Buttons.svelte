@@ -1,6 +1,8 @@
 <script>
 	import { modal } from '@sudoku/stores/modal';
 	import { pauseGame, resumeGame } from '@sudoku/game';
+	import { slide, fade } from 'svelte/transition';
+	import { DROPDOWN_DURATION } from '@sudoku/constants';
 
 	function handleShareButton() {
 		pauseGame();
@@ -11,6 +13,19 @@
 		pauseGame();
 		modal.show('settings', { onHide: resumeGame });
 	}
+    
+    	let dropdownVisible = false;
+
+	function showDropdown() {
+		pauseGame();
+		dropdownVisible = true;
+	}
+
+	function hideDropdown() {
+		dropdownVisible = false;
+		setTimeout(resumeGame, DROPDOWN_DURATION);
+	}
+
 </script>
 
 <div class="flex justify-evenly space-x-3">
@@ -28,7 +43,41 @@
 		</svg>
 	</button>
 
+	<button class="dropdown-button" on:click={dropdownVisible ? hideDropdown : showDropdown} title="{dropdownVisible ? 'Close' : 'Open'} Menu">
+		<svg class="icon-outline mr-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+			<path stroke-linecap="butt" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+		</svg>
+	</button>
+
+	{#if dropdownVisible}
+		<button transition:fade={{duration: DROPDOWN_DURATION}} class="dropdown-overlay" on:click={hideDropdown} tabindex="-1"></button>
+
+		<div transition:slide={{duration: DROPDOWN_DURATION}} class="dropdown-menu">
+				<a class="dropdown-item" href="index.html" title="Homepage">
+					<svg class="icon-solid" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+						<path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+					</svg>
+					<span class="align-middle">Home</span>
+				</a>
+				<a class="dropdown-item" href="books.html" title="Books">
+					<svg class="icon-solid" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+						<path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+					</svg>
+					<span class="align-middle">Books</span>
+				</a>
+				<a class="dropdown-item" href="about.html" title="About Musidoku">
+					<svg class="icon-solid" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+						<path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+					</svg>
+					<span class="align-middle">About</span>
+				</a>
+
+
+		</div>
+	{/if}
 </div>
+
+
 
 <style>
 	.btn-header {
@@ -45,5 +94,26 @@
 
 	.btn-header:focus {
 		@apply shadow-outline-inverse;
+	}
+    
+    .dropdown-overlay {
+		@apply fixed z-20 inset-0 h-full w-full bg-black bg-opacity-50 outline-none cursor-default;
+	}
+
+	.dropdown-menu {
+		@apply absolute z-30 left-1/2 top-10 mt-2 py-2 w-40 bg-white rounded-lg shadow-xl;
+	}
+
+
+	.dropdown-item {
+		@apply block px-4 py-2 text-gray-800 transition-colors duration-100 text-base tracking-wide;
+	}
+
+	.dropdown-item:hover {
+		@apply bg-primary text-white;
+	}
+
+	.dropdown-item:active {
+		@apply bg-primary-dark;
 	}
 </style>
