@@ -1,8 +1,8 @@
 {
-	"name": "Sudoku, by Skayo",
-	"short_name": "Sudoku",
-	"start_url": "/",
-	"scope": "./",
+	"name": "Musidoku, by rbrignall on a base by Skayo",
+	"short_name": "Musidoku",
+	"start_url": "/app",
+	"scope": "./app",
 	"display": "standalone",
 	"theme_color": "#2979fa",
 	"background_color": "#f7f9fc",

@@ -35,7 +35,7 @@
 	</div>
 	<div class="board-padding absolute inset-0 flex justify-center">
 
-		<div class="bg-white shadow-2xl overflow-hidden w-full h-full max-w-lg grid grid-cols-9" class:bg-gray-200={$gamePaused}>
+		<div class="bg-white shadow-2xl overflow-hidden w-full h-full max-w-lg grid grid-cols-9 transition duration-300" class:bg-gray-200={$gamePaused}>
 
 			{#each $userGrid as row, y}
 				{#each row as value, x}

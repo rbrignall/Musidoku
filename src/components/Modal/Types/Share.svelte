@@ -3,18 +3,21 @@
 	import { BASE_URL } from '@sudoku/constants';
 	import { modal } from '@sudoku/stores/modal';
 	import { grid } from '@sudoku/stores/grid';
+	import { gameWon } from '@sudoku/stores/game';
 	import Clipboard from '../../Utils/Clipboard.svelte';
+	import { timer } from '@sudoku/stores/timer';
 
 	export let data = {};
 	export let hideModal;
 
 	const sencode = grid.getSencode($grid);
-
+    const text = encodeURIComponent($gameWon ? "I completed this Musidoku® in " + $timer + ":" : "I'm playing this Musidoku® puzzle!");
+    
 	const link = BASE_URL + '#' + sencode;
 	const encodedLink = encodeURIComponent(link);
-	const facebookLink = 'https://www.facebook.com/sharer/sharer.php?u=' + encodedLink;
-	const twitterLink = 'https://twitter.com/intent/tweet?text=Check%20out%20this%20Musidoku%20puzzle!&url=' + encodedLink;
-	const mailToLink = 'mailto:?subject=A%20Musidoku%20puzzle%20for%20you&body=Here%27s%20a%20link%20to%20a%20Musidoku%20puzzle%3A%0A%0A' + encodedLink;
+	//const facebookLink = 'https://www.facebook.com/sharer/sharer.php?u=' + encodedLink;
+	const twitterLink = 'https://twitter.com/intent/tweet?text='+text+'&url=' + encodedLink;
+	const mailToLink = 'mailto:?subject=Play%20This%20Musidoku%20puzzle&body='+text+'%0A%0A' + encodedLink;
 
 	let copyText;
 
@@ -27,8 +30,8 @@
 		let canShare = false;
 		const shareData = {
 			url: link,
-			title: 'Musidoku, on a codebase made by Skayo',
-			text: 'Create & Play Musidoku puzzles for free online!'
+			title: 'Musidoku, by rbrignall on a codebase by Skayo',
+			text: 'Play Musidoku online!'
 		};
 
 		if ('share' in navigator) {
@@ -84,7 +87,7 @@
 
 		<span>Share on Twitter</span>
 	</a>
-
+<!--
 	<a href={facebookLink} target="_blank" class="btn btn-share btn-share-facebook btn-small">
 		<svg class="icon-outline mr-2" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" stroke="none">
 			<path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
@@ -92,7 +95,7 @@
 
 		<span>Share on Facebook</span>
 	</a>
-
+-->
 	<a href={mailToLink} target="_blank" class="btn btn-small">
 		<svg class="icon-outline mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />

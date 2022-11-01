@@ -53,19 +53,19 @@
 		<button transition:fade={{duration: DROPDOWN_DURATION}} class="dropdown-overlay" on:click={hideDropdown} tabindex="-1"></button>
 
 		<div transition:slide={{duration: DROPDOWN_DURATION}} class="dropdown-menu">
-				<a class="dropdown-item" href="index.html" title="Homepage">
+				<a class="dropdown-item" href="../index.html" title="Homepage">
 					<svg class="icon-solid" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
 						<path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
 					</svg>
 					<span class="align-middle">Home</span>
 				</a>
-				<a class="dropdown-item" href="books.html" title="Books">
+				<a class="dropdown-item" href="../books.html" title="Books">
 					<svg class="icon-solid" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
 						<path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
 					</svg>
 					<span class="align-middle">Books</span>
 				</a>
-				<a class="dropdown-item" href="about.html" title="About Musidoku">
+				<a class="dropdown-item" href="../about.html" title="About Musidoku">
 					<svg class="icon-solid" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
 						<path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
 					</svg>
@@ -101,7 +101,7 @@
 	}
 
 	.dropdown-menu {
-		@apply absolute z-30 left-1/2 top-10 mt-2 py-2 w-40 bg-white rounded-lg shadow-xl;
+		@apply absolute z-30 left-1/2 top-10 mt-2 py-2 w-40 bg-white rounded-b-lg shadow-xl;
 	}
 
 
