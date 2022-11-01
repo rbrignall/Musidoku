@@ -69,7 +69,7 @@
 <div class="dropdown">
 	<button class="dropdown-button" on:click={dropdownVisible ? hideDropdown : showDropdown} title="{dropdownVisible ? 'Close' : 'Open'} Menu">
 		<svg class="icon-outline mr-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-			<path stroke-linecap="butt" stroke-linejoin="round" stroke-width="2" d="M16 6h-5v5H6v5H1v7h22V1h-7z" />
+			<path stroke-linecap="butt" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
 		</svg>
 
 		<span class="text-sm sm:text-lg tracking-wider">{$difficulty === DIFFICULTY_CUSTOM ? 'Custom' : DIFFICULTIES[$difficulty]}</span>
@@ -125,7 +125,7 @@
 	}
 
 	.dropdown-menu {
-		@apply absolute z-30 left-0 mt-2 py-2 w-40 bg-white rounded-lg shadow-xl;
+		@apply absolute z-30 left-0 mt-2 py-2 w-40 bg-white rounded-b-lg shadow-xl;
 	}
 
 

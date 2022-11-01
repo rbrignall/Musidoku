@@ -56,6 +56,10 @@
 	<button class="btn btn-small mr-3" on:click={hideModal}>Cancel</button>
 	<button class="btn btn-small btn-primary" on:click={handleSave}>Save</button>
 </div>
+			<hr class="my-1">
+<p class="text-sm text-center">Copyright © 2022 - Musidoku.com All rights reserved</p>
+<p class="text-sm text-center">“Musidoku” is a registered trademark (Reg. No. 2501927)</p>
+<p class="text-sm text-center">Online version created by <a href="https://rbrignall.github.io/">rbrignall</a>.</p>
 
 <style>
 	.number-input {
