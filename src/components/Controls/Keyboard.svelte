@@ -8,10 +8,10 @@
     const glyphDescription = ["","treble clef","bass clef","minim/half note","crotchet/quarter note","quaver/eighth note","semiquaver/sixteenth note","sharp","flat","fermata"];
 
 	// TODO: Improve keyboardDisabled
-	import { keyboardDisabled } from '@sudoku/stores/keyboard';
+	import { keyboardDisabled, keyDisabled } from '@sudoku/stores/keyboard';
 
 	function handleKeyButton(num) {
-		if (!$keyboardDisabled) {
+		if (!($keyboardDisabled || (num > 0 && $keyDisabled[num]===9))) {
 			if ($notes) {
 				if (num === 0) {
 					candidates.clear($cursor);
@@ -89,7 +89,7 @@
 				</svg>
 			</button>
 		{:else}
-			<button class="btn btn-key" disabled={$keyboardDisabled} title="Insert {glyphDescription[keyNum + 1]}" on:click={() => handleKeyButton(keyNum + 1)}>
+			<button class="btn btn-key" disabled={$keyboardDisabled || $keyDisabled[keyNum+1]} title="Insert {glyphDescription[keyNum + 1]}" on:click={() => handleKeyButton(keyNum + 1)}>
 				<Glyph value={keyNum + 1} />
 			</button>
 		{/if}

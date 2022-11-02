@@ -27,6 +27,6 @@
 	}
 
 	.timer-text {
-		@apply w-24 px-2 text-xl sm:text-2xl sm:px-4;
+		@apply min-w-24 px-2 text-xl sm:text-2xl sm:px-4;
 	}
 </style>

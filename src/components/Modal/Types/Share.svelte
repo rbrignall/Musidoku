@@ -11,13 +11,13 @@
 	export let hideModal;
 
 	const sencode = grid.getSencode($grid);
-    const text = encodeURIComponent($gameWon ? "I completed this Musidoku® in " + $timer + ":" : "I'm playing this Musidoku® puzzle!");
-    
+    const wording = $gameWon ? "I completed this Musidoku® in " + $timer + ":" : "I'm playing this Musidoku® puzzle!";
+    const encodedWording = encodeURIComponent(wording);
 	const link = BASE_URL + '#' + sencode;
 	const encodedLink = encodeURIComponent(link);
 	//const facebookLink = 'https://www.facebook.com/sharer/sharer.php?u=' + encodedLink;
-	const twitterLink = 'https://twitter.com/intent/tweet?text='+text+'&url=' + encodedLink;
-	const mailToLink = 'mailto:?subject=Play%20This%20Musidoku%20puzzle&body='+text+'%0A%0A' + encodedLink;
+	const twitterLink = 'https://twitter.com/intent/tweet?text='+encodedWording+'&url=' + encodedLink;
+	const mailToLink = 'mailto:?subject=Play%20This%20Musidoku%20puzzle&body='+encodedWording+'%0A%0A' + encodedLink;
 
 	let copyText;
 
@@ -30,8 +30,8 @@
 		let canShare = false;
 		const shareData = {
 			url: link,
-			title: 'Musidoku, by rbrignall on a codebase by Skayo',
-			text: 'Play Musidoku online!'
+			title: 'Musidoku',
+			text: wording
 		};
 
 		if ('share' in navigator) {
@@ -72,12 +72,12 @@
 
 <div class="flex flex-col space-y-2">
 
-	<a href={link} class="btn btn-small" on:click|preventDefault={copyText(link)}>
+	<a href={link} class="btn btn-small" on:click|preventDefault={copyText(wording + '\n' + link)}>
 		<svg class="icon-outline mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
 		</svg>
 
-		<span>Copy Link</span>
+		<span>Copy to clipboard</span>
 	</a>
 
 	<a href={twitterLink} target="_blank" class="btn btn-share btn-share-twitter btn-small">
@@ -103,7 +103,7 @@
 
 		<span>Share by Email</span>
 	</a>
-
+<!--
 	<button class="btn btn-small" on:click={() => modal.show('qrcode', { ...data, encodedLink })}>
 		<svg class="icon-outline mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" />
@@ -111,6 +111,7 @@
 
 		<span>Share QR Code</span>
 	</button>
+-->
 </div>
 
 <Clipboard bind:copyText />

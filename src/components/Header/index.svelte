@@ -8,7 +8,7 @@
 
 		<nav class="flex flex-wrap items-center justify-between">
 			<Dropdown />
-            <h1>Musidoku®</h1>
+            <h1><a href="https://www.musidoku.com/">Musidoku®</a></h1>
 			<Buttons />
 		</nav>
 
