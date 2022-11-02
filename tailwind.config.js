@@ -27,6 +27,9 @@ module.exports = {
       },
       boxShadow: {
         'outline-inverse': '0 0 0 3px rgba(235, 248, 255, 0.5)',
+      },
+      minWidth: {
+        '24': '24px',
       }
     },
   },
