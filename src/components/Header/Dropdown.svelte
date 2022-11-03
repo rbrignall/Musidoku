@@ -66,10 +66,19 @@
 	}
 </script>
 
-<div class="dropdown">
+<div class="dropdown justify-self-start">
 	<button class="dropdown-button" on:click={dropdownVisible ? hideDropdown : showDropdown} title="{dropdownVisible ? 'Close' : 'Open'} Menu">
-		<svg class="icon-outline mr-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+		<svg class="icon-outline mr-1" xmlns="http://www.w3.org/2000/svg" fill="none" fill-opacity="0.4" viewBox="0 0 24 24" stroke="currentColor">
 			<path stroke-linecap="butt" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        {#if $difficulty!="easy"}
+				        <path fill-rule="evenodd" fill="currentColor" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2" clip-rule="evenodd" />
+                            {#if $difficulty!="medium"}
+				        <path fill-rule="evenodd" fill="currentColor" d="M 9 19 V 9 A 2 2 0 0 1 11 7 H 13 A 2 2 0 0 1 15 9 V 19 M 9 19 A 2 2 0 0 0 11 21 H 13 A 2 2 0 0 0 15 19" clip-rule="evenodd" />
+                                {#if $difficulty==="expert"}
+				        <path fill-rule="evenodd" fill="currentColor" d="M 15 19 V 5 A 2 2 0 0 1 17 3 H 19 A 2 2 0 0 1 21 5 V 19 A 2 2 0 0 1 19 21 H 17 A 2 2 0 0 1 15 19" clip-rule="evenodd" />                                
+                                {/if}
+                            {/if}
+                        {/if}
 		</svg>
 
 		<span class="text-sm sm:text-lg tracking-wider">{$difficulty === DIFFICULTY_CUSTOM ? 'Custom' : DIFFICULTIES[$difficulty]}</span>
@@ -81,8 +90,17 @@
 		<div transition:slide={{duration: DROPDOWN_DURATION}} class="dropdown-menu">
 			{#each Object.entries(DIFFICULTIES) as [difficultyValue, difficultyLabel]}
 				<a class="dropdown-item" on:click|preventDefault={() => handleDifficulty(difficultyValue)} href="/difficulty-{difficultyValue}" title="Set difficulty to '{difficultyLabel}'">
-					<svg class="icon-solid" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-						<path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+					<svg class="icon-solid" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width=20 stroke="currentColor" fill="none" fill-opacity="0.4">
+			             <path stroke-linecap="butt" stroke-linejoin="round" stroke-width="1.8" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        {#if difficultyValue!="easy"}
+				        <path fill-rule="evenodd" fill="currentColor" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2" clip-rule="evenodd" />
+                            {#if difficultyValue!="medium"}
+				        <path fill-rule="evenodd" fill="currentColor" d="M 9 19 V 9 A 2 2 0 0 1 11 7 H 13 A 2 2 0 0 1 15 9 V 19 M 9 19 A 2 2 0 0 0 11 21 H 13 A 2 2 0 0 0 15 19" clip-rule="evenodd" />
+                                {#if difficultyValue==="expert"}
+				        <path fill-rule="evenodd" fill="currentColor" d="M 15 19 V 5 A 2 2 0 0 1 17 3 H 19 A 2 2 0 0 1 21 5 V 19 A 2 2 0 0 1 19 21 H 17 A 2 2 0 0 1 15 19" clip-rule="evenodd" />                                
+                                {/if}
+                            {/if}
+                        {/if}
 					</svg>
 
 					<span class="align-middle">{difficultyLabel}</span>
