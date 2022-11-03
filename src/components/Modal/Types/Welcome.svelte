@@ -27,7 +27,7 @@
 
 {#if data.sencode}
 	<div class="p-3 text-lg rounded bg-primary bg-opacity-25 border-l-8 border-primary border-opacity-75 mb-4">
-		Someone shared a Musidoku® puzzle with you!<br>Click start to have a go
+		Someone shared a Musidoku® puzzle with you!<br>Click start to play
 	</div>
 {/if}
 

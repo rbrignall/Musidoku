@@ -48,7 +48,7 @@
 	{/if}
 
 	<Switch bind:checked={settings.highlightCells} text="Highlight cells in same row/column/box" id="highlight-cells" />
-	<Switch bind:checked={settings.highlightSame} text="Highlight cells with the same number" id="highlight-matching" />
+	<Switch bind:checked={settings.highlightSame} text="Highlight cells with the same symbol" id="highlight-matching" />
 	<Switch bind:checked={settings.highlightConflicting} text="Show conflicts" id="highlight-conflicting" />
 </div>
 
