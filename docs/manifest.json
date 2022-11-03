@@ -1,11 +1,11 @@
 {
-	"name": "Musidoku, by rbrignall on a base by Skayo",
+	"name": "Musidoku",
 	"short_name": "Musidoku",
-	"start_url": "/app",
-	"scope": "./app",
+	"start_url": "/",
+	"scope": "./",
 	"display": "standalone",
-	"theme_color": "#2979fa",
-	"background_color": "#f7f9fc",
+	"theme_color": "#ff3f3f",
+	"background_color": "#3f3f3f",
 	"icons": [
 		{
 			"src": "/logo-192.png",
