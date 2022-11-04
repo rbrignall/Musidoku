@@ -24,6 +24,7 @@
 </script>
 
 <h1 class="text-3xl font-semibold mb-6 leading-none">Welcome!</h1>
+<div class="text-lg mb-3">Musidoku® is a musical variation of the classic Sudoku number-place puzzle.</div>
 
 {#if data.sencode}
 	<div class="p-3 text-lg rounded bg-primary bg-opacity-25 border-l-8 border-primary border-opacity-75 mb-4">
