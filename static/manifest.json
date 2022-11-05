@@ -1,8 +1,8 @@
 {
 	"name": "Musidoku",
 	"short_name": "Musidoku",
-	"start_url": "/",
-	"scope": "./",
+	"start_url": "https://musidoku.com",
+    "description": "Puzzles to tickle & tackle your musical brain cells",
 	"display": "standalone",
 	"theme_color": "#3f3f3f",
 	"background_color": "#ff3f3f",
