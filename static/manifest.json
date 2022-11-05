@@ -4,9 +4,14 @@
 	"start_url": "/",
 	"scope": "./",
 	"display": "standalone",
-	"theme_color": "#ff3f3f",
-	"background_color": "#3f3f3f",
+	"theme_color": "#3f3f3f",
+	"background_color": "#ff3f3f",
 	"icons": [
+		{
+			"src": "/logo-32.png",
+			"sizes": "32x32",
+			"type": "image/png"
+		},
 		{
 			"src": "/logo-192.png",
 			"sizes": "192x192",
