@@ -16,7 +16,13 @@
 
 		if (settings.hints < 0) settings.hints = 0;
 		if (settings.hints > MAX_HINTS) settings.hints = MAX_HINTS;
-
+        // Update hints localstorage here (not ideal, but avoids changing it
+        // when game first loaded).
+        if(settings.hintsLimited)
+          localStorage.setItem("hints",settings.hints);
+        else
+          localStorage.setItem("hints",Infinity);
+        console.log(settings.hints);
 		settingsStore.set(settings);
 		hideModal();
 	}
