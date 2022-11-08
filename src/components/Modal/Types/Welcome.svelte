@@ -1,6 +1,6 @@
 <script>
 	import { difficulty as difficultyStore } from '@sudoku/stores/difficulty';
-	import { startNew, startCustom } from '@sudoku/game';
+	import { startNew, startCustom, loadFromStorage } from '@sudoku/game';
 	import { validateSencode } from '@sudoku/sencode';
 	import { DIFFICULTIES } from '@sudoku/constants';
 	export let data = {};
@@ -21,6 +21,10 @@
 
 		hideModal();
 	}
+    function handleLoad() {
+        loadFromStorage();
+		hideModal();
+    }
 </script>
 
 <h1 class="text-3xl font-semibold mb-6 leading-none">Welcome!</h1>
@@ -54,4 +58,5 @@
 
 <div class="flex justify-end">
 	<button class="btn btn-small btn-primary" disabled={buttonDisabled} on:click={handleStart}>Start</button>
+	<button class="btn btn-small btn-primary" disabled={buttonDisabled} on:click={handleLoad}>Load</button>
 </div>
