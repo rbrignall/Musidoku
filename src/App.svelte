@@ -13,6 +13,7 @@
 	gameWon.subscribe(won => {
 		if (won) {
 			game.pause();
+            game.clearFromStorage();
 			modal.show('gameover');
 		}
 	});
